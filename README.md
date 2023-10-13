@@ -45,3 +45,37 @@ Tutorial: https://youtu.be/uGLQF2kUwOA
       - das Datum an dem der Account erstellt wurde [late DateTime]
       - die Benutzer-Rolle [late AccountRoll]
       
+
+
+- Beim Rechtesystem wird ein User - Moderator - Admin - SuperAdmin Modell eingesetzt
+  -User: Account erstellen, Klettersteige anzeigen lassen, filtern, Chat beitreten, Profildaten anpassen
+  -Moderator: Gleiche Berechtigungen wie User + ist für das Moderieren verschiedener Klettersteig-Chats zuständig
+  -Admin: Gleiche Berechtigungen wie der User + Klettersteige erstellen, bearbeiten und Löschen + kann Moderatoren setzen
+  -SuperAdmin: Hat vollunfänglichen Zugriff auf die App mit Statisiken, Löschen von Klettersteigen + Ernennen von Admins und Moderatoren + Voller SourceCode zugriff
+
+
+NICHT BEARBEITET VON ALTEM KLAPP
+
+
+- Das Anzeigen der verschiedenen Klettersteige wird ebenfalls in einer List-View umgesetzt, welche diese zunächst als "Kacheln" mit 
+den essenziellen Infos anzeigt:
+  - Wetter
+  - Offen Ja/Nein
+  - Klettersteigname
+  - Klettersteigbeschreibung
+
+
+
+- Beim antippen/klicken einer dieser Kacheln soll eine Klettersteig-Ansicht mit allen Klettersteig spezifischen Daten angezeigt werden. Alle Daten des Klettersteigs
+werden angezeigt. In dieser Ansicht soll eventuell eine Kommentar-Funktion integriert werden - diese ist aber noch nicht spezifisch ausgearbeitet
+
+
+- Um einen "Klettersteig-Chat" beizutreten, soll wie oben beschrieben ein QR-Code gescannt werden, welcher den User in einen Klettersteig
+spezifischen Chat-Room wirft. Die Funktion für den QR-Code Scanner wird mit einem Button im Hauptfenster aufgerufen. Für den QR-Code Scanner 
+wird die qr_code_scanner: - Library benötigt
+
+- Die verschiedenen Ansichten werden so angeordnet, dass beim Start der App, nach dem Login das "Haupfenster" angezeigt wird. Durch swipen nach rechts kommt man zur Chat-Ansicht
+  (falls durch QR-Code bereits in Chat beigetreten). Durch swipen nach links kommt man zu der Klettersteig - Übersicht. Durch einen Button in dieser Ansicht kommt man zu der 
+Klettersteig-Erstellen-Ansicht (nur wenn berechtigt).
+
+  
