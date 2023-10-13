@@ -14,8 +14,11 @@ Umsetzung:
 Tutorial: https://youtu.be/uGLQF2kUwOA
 
  - Datensätze für Datenbank:
+   Alle Datensätze werden in englisch und in CamelCase in die Datenbank übertragen
   
-    Attribute:
+    Klettersteig:
+
+     Attribute:
       - ID [number]
       - der Name des Klettersteigs [STRING]
       - die Beschreibung des Klettersteigs [STRING]
