@@ -9,12 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+
 import com.example.klapp.databinding.FragmentSecondBinding;
 
 //  Shows the current information a out the User which is logged in(name, role usw)
 public class UserInfoScreen extends Fragment {
 
-    private FragmentUserInfoBinding binding;
+    private FragmentUserInfo binding;
 
     @Override
     public View onCreateView(
@@ -22,7 +23,7 @@ public class UserInfoScreen extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = UserInfoScreen.inflate(inflater, container, false);
         return binding.getRoot();
 
     }

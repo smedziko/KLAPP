@@ -16,6 +16,11 @@
             app:destination="@id/SecondFragment" />
     </fragment>
     <fragment
+        android:id="@+id/UserInfo"
+        android:name="com.example.klapp.UserInfoScreen"
+        android:label="@string/userInfo_Label"
+        tools:layout="@layout/UserInfo" />
+    <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.klapp.SecondFragment"
         android:label="@string/second_fragment_label"
@@ -24,5 +29,8 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_UserInfo"
+            app:destination="@id/UserInfo" />
     </fragment>
 </navigation>
