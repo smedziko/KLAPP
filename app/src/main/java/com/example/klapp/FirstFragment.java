@@ -37,6 +37,15 @@ public class FirstFragment extends Fragment {
             }
         });
     }
+    // ACHTUNG DIESE FUNKTION UNSICHER MUSS NOCH MIT ZWISCHEN Handler(Server) gemacht werden
+    public void DbConnection(){
+          final String JdbcUrl = "jdbc:mysql://xserv:3306/klapp";
+          final String user = "klapp";
+          final String password = "superklapp";
+
+    }
+
+
 
     @Override
     public void onDestroyView() {
