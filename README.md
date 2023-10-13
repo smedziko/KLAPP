@@ -43,7 +43,7 @@ Tutorial: https://youtu.be/uGLQF2kUwOA
       - [?] der Speicherpfad des Profilbildes [late STRING?]
       - die Telefonnummer des Users [late STRING?]
       - das Datum an dem der Account erstellt wurde [late DateTime]
-      - die Benutzer-Rolle [late AccountRoll]
+      - die Benutzer-Rolle [string]
       
 
 
