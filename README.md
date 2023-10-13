@@ -8,7 +8,7 @@ Umsetzung:
 
 - Die Entwicklerumgebung ist Android-Studio
 
-- Als Datenbank wird Mysql innerhabl des Schulnetzwerkes benutzt
+- Als Datenbank wird MySQL innerhalb des Schulnetzwerkes benutzt
 
 - Version Control wird mit GIT umgesetzt
 Tutorial: https://youtu.be/uGLQF2kUwOA
