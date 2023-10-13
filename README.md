@@ -6,6 +6,7 @@ Aufgabenstellung: Programmieren Sie eine Klettersteig Applikation, welche sowohl
 
 Umsetzung:
 
+
 - Die Entwicklerumgebung ist Android-Studio
 
 - Als Datenbank wird MySQL innerhalb des Schulnetzwerkes benutzt
