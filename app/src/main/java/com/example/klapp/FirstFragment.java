@@ -16,10 +16,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Objects;
 
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
+    ResultSet results = null;
 
     @Override
     public View onCreateView(
@@ -31,25 +33,8 @@ public class FirstFragment extends Fragment {
         return binding.getRoot();
 
     }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        try {
-            DbConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        binding.loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-            }
-        });
-    }
     // ACHTUNG DIESE FUNKTION UNSICHER MUSS NOCH MIT ZWISCHEN Handler(Server) gemacht werden
-    public void DbConnection() throws SQLException {
+    public ResultSet DbConnection() throws SQLException {
         final String JdbcUrl = "jdbc:mysql://xserv:3306/klapp";
         final String user = "klapp";
         final String password = "superklapp";
@@ -61,17 +46,51 @@ public class FirstFragment extends Fragment {
         while (resultSet.next()){
             System.out.println(resultSet.toString());
             System.out.println(resultSet.getString("username"));
+            String DbUsernames = resultSet.getString("username");
             System.out.println(resultSet.getString("email"));
         }
 
 
         statement.close();
         resultSet.close();
+        connection.close();
 
-
-
-
+        return resultSet;
     }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        try {
+            results =  DbConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        binding.loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                    try {
+                       while (!Objects.equals(results.getString("username"), binding.usernameEditText.toString())){
+                           // for password also needed &&
+                           System.out.println("USER NOT FOUND");
+                        }
+                        System.out.println("USER FOUND");
+                        NavHostFragment.findNavController(FirstFragment.this)
+                                .navigate(R.id.action_FirstFragment_to_SecondFragment);
+
+
+
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+
+
+            }
+        });
+    }
+
 
 
 
