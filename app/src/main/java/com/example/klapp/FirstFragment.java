@@ -35,9 +35,16 @@ public class FirstFragment extends Fragment {
     }
     // ACHTUNG DIESE FUNKTION UNSICHER MUSS NOCH MIT ZWISCHEN Handler(Server) gemacht werden
     public ResultSet DbConnection() throws SQLException {
+        /*
         final String JdbcUrl = "jdbc:mysql://xserv:3306/klapp";
         final String user = "klapp";
         final String password = "superklapp";
+        */
+
+        //LoginData für WimmerHomeOffice
+        final String JdbcUrl = "jdbc:mysql://localhost:3306";
+        final String user = "root";
+        final String password = "my-secret-pw";
 
         Connection connection = DriverManager.getConnection(JdbcUrl,user,password);
         Statement statement = connection.createStatement();
