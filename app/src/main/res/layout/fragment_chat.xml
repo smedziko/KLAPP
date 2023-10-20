@@ -1,48 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FragmentChat"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/mainbackground"
-    android:gravity="center">
+    android:padding="16dp">
 
+    <ScrollView
+        android:id="@+id/chatView"
+        android:layout_width="364dp"
+        android:layout_height="578dp">
 
-
-    <ImageView
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:src="@drawable/ic_launcher_foreground"
-        android:layout_gravity="center"/>
-
-    <EditText
-        android:id="@+id/usernameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Benutzername"
-        android:inputType="text"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edittext_background"
-        android:padding="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/chatInput"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Passwort"
-        android:inputType="textPassword"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/edittext_background"
-        android:padding="10dp" />
+        android:layout_height="55dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
 
     <Button
+        android:id="@+id/SendChat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Anmelden"
-        android:layout_marginTop="16dp"
-        android:id="@+id/loginButton"/>
-
+        android:text="Button" />
 </LinearLayout>

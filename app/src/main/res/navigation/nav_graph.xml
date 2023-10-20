@@ -6,6 +6,10 @@
     app:startDestination="@id/FirstFragment">
 
     <fragment
+        android:id="@+id/ChatFragment"
+        android:name="com.example.klapp.ChatFragment"
+        android:label="@string/userInfo_Label" />
+    <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.klapp.FirstFragment"
         android:label="@string/first_fragment_label"
@@ -19,7 +23,7 @@
         android:id="@+id/UserInfo"
         android:name="com.example.klapp.UserInfoScreen"
         android:label="@string/userInfo_Label"
-        tools:layout="@layout/UserInfo" />
+        tools:layout="@layout/fragment_userinfo" />
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.klapp.SecondFragment"

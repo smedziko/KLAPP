@@ -9,13 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.klapp.databinding.FragmentChatBinding;
 import com.example.klapp.databinding.FragmentUserinfoBinding;
 
 
 //  Shows the current information a out the User which is logged in(name, role usw)
 public class ChatFragment extends Fragment {
 
-    private ChatFragment binding;
+    private FragmentChatBinding binding;
 
     @Override
     public View onCreateView(
@@ -23,7 +24,7 @@ public class ChatFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = ChatFragment.inflate(inflater, container, false);
+        binding = FragmentChatBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -31,7 +32,11 @@ public class ChatFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+        //chatInput = TextEingabe Feld
+        //chatView = Chat
+
+
+        binding.SendChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ChatFragment.this)
